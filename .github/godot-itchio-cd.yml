@@ -54,7 +54,7 @@ jobs:
        env:
          BUTLER_CREDENTIALS: ${{ secrets.ITCH_IO_API_KEY }}
          CHANNEL: HTML
-         ITCH_GAME: ThornCard
-         ITCH_USER: turbobutateam
+         ITCH_GAME: life-is-bubblance
+         ITCH_USER: davidlms
          BRANCH: itch-io
          PACKAGE: build/WebGL
