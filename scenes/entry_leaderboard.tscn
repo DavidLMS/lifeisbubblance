@@ -1,4 +1,14 @@
-[gd_scene format=3 uid="uid://xobsyl8y365x"]
+[gd_scene load_steps=4 format=3 uid="uid://cift478fm3a5t"]
+
+[ext_resource type="FontFile" uid="uid://d4kiqrgdxtgln" path="res://assets/fonts/bubble-bobble-font/BubbleBobble-MVpLp.otf" id="1_bigv6"]
+[ext_resource type="Script" path="res://scenes/leaderboard_entry.gd" id="1_if8y6"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_3qwgn"]
+font = ExtResource("1_bigv6")
+font_size = 40
 
 [node name="EntryLeaderboard" type="Label"]
-text = "{pos}. {username} scored: {score} points"
+text = "{score} {username}"
+label_settings = SubResource("LabelSettings_3qwgn")
+horizontal_alignment = 1
+script = ExtResource("1_if8y6")
