@@ -1,10 +1,10 @@
 name: Godot Builder Itchio
 
 on:
-  workflow_dispatch:
-#   push:
-#     branches:
-#       - main
+#  workflow_dispatch:
+   push:
+     branches:
+       - main
 
 jobs:         
  buildWebGL:
@@ -18,8 +18,9 @@ jobs:
        uses: firebelley/godot-export@v6.0.0
        with:
          godot_executable_download_url: https://github.com/godotengine/godot/releases/download/4.3-stable/Godot_v4.3-stable_linux.x86_64.zip
-         godot_export_templates_download_url: https://downloads.tuxfamily.org/godotengine/4.3/Godot_v4.3-stable_export_templates.tpz
+         godot_export_templates_download_url: https://github.com/godotengine/godot/releases/download/4.3-stable/Godot_v4.3-stable_export_templates.tpz
          relative_project_path: ./
+         use_preset_export_path: true
          verbose: true
          
      - uses: actions/upload-artifact@v3
@@ -35,10 +36,10 @@ jobs:
      - name: Checkout code
        uses: actions/checkout@v3
 
-     - uses: actions/download-artifact@v2
+     - uses: actions/download-artifact@v3
        with:
          name: build-WebGL
-         path: build
+         path: build/WebGL
 
      - name: Display structure of root files
        run: ls -R
