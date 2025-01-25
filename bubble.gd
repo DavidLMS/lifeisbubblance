@@ -17,8 +17,6 @@ func _ready() -> void:
 	sprite.scale = Vector2(bubble_size, bubble_size)
 	collider.shape.radius = collider.shape.radius * bubble_size / 4.0
 	rigid_collider.shape.size = rigid_collider.shape.size * bubble_size / 4.0
-	print(collider.shape.radius)
-	print(rigid_collider.shape.size)
 
  
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -39,8 +37,6 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 				var velocity_correction:Vector2 = get_quadrant(linear_velocity, i)
 				nb.linear_velocity = velocity_correction
 				nb.set_sprite_scale(sprite.scale.x * scale_reduction)
-				print(scale)
-				print(nb.scale)
 				get_tree().root.add_child(nb)
 		queue_free()
 
