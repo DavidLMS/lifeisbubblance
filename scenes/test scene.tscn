@@ -5,6 +5,7 @@
 [ext_resource type="Script" path="res://scenes/character_body_2d.gd" id="2_mkqmk"]
 [ext_resource type="PackedScene" uid="uid://d0a67jc8hum05" path="res://scenes/weapon.tscn" id="3_t1mx1"]
 [ext_resource type="PackedScene" uid="uid://cwsh04qrbdgdf" path="res://bubble.tscn" id="5_2gpxk"]
+[ext_resource type="Texture2D" uid="uid://juayrwfl4jqd" path="res://assets/fondos/polo2.jpg" id="6_n3y7c"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fie4b"]
 texture = ExtResource("1_03on1")
@@ -111,3 +112,12 @@ sprite_frames = SubResource("SpriteFrames_g8iyg")
 
 [node name="RigidBody2D" parent="." instance=ExtResource("5_2gpxk")]
 max_contacts_reported = 1
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0.699653, 0.699653, 0.699653, 1)
+z_index = -1
+offset_left = -639.0
+offset_top = -359.0
+offset_right = 641.0
+offset_bottom = 361.0
+texture = ExtResource("6_n3y7c")
