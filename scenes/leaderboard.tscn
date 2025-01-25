@@ -104,7 +104,7 @@ text = "Add entry"
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 4
-text = "BACK"
+text = "MAIN MENU"
 
 [connection signal="pressed" from="UI/MarginContainer/VBoxContainer/Submit" to="." method="_on_submit_pressed"]
 [connection signal="pressed" from="UI/MarginContainer/VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
