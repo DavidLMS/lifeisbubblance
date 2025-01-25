@@ -18,7 +18,6 @@ config/icon="res://icon.svg"
 [autoload]
 
 Events="*res://events.gd"
-SilentWolf="*res://addons/silent_wolf/SilentWolf.gd"
 
 [display]
 
