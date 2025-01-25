@@ -3,11 +3,50 @@
 [ext_resource type="Texture2D" uid="uid://c367mcobecici" path="res://assets/bricks.png" id="1_03on1"]
 [ext_resource type="Texture2D" uid="uid://byjooygmpccwh" path="res://assets/gun.png" id="1_uvuk3"]
 [ext_resource type="Script" path="res://scenes/main_scene.gd" id="1_yjfs7"]
-[ext_resource type="PackedScene" uid="uid://ym8qoe8qsph7" path="res://scenes/character.tscn" id="2_y1lqe"]
+[ext_resource type="PackedScene" path="res://scenes/character.tscn" id="2_y1lqe"]
 [ext_resource type="PackedScene" uid="uid://cwsh04qrbdgdf" path="res://scenes/bubble.tscn" id="5_2gpxk"]
 [ext_resource type="Texture2D" uid="uid://juayrwfl4jqd" path="res://assets/fondos/polo2.jpg" id="6_n3y7c"]
 [ext_resource type="Texture2D" uid="uid://dsps3byl7hfe7" path="res://assets/health_bar.png" id="8_1cx2e"]
 [ext_resource type="Script" path="res://scripts/health_bar.gd" id="9_4u1p7"]
+
+[sub_resource type="Animation" id="Animation_fas7d"]
+length = 2.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Gun:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(889, -0.0005, 0, 0.0005, 0, 641, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1.1)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Gun:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-400, -0.0005, 0, 0.0005, 0, -235, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1.1)
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.16667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"popup_bubbles"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_1fw2h"]
 resource_name = "gun"
@@ -42,45 +81,6 @@ tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(1.06667),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"popup_bubbles"
-}]
-}
-
-[sub_resource type="Animation" id="Animation_fas7d"]
-length = 2.5
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Gun:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(889, -0.0005, 0, 0.0005, 0, 641, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 1.1)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Gun:position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(-400, -0.0005, 0, 0.0005, 0, -235, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 1.1)
-}
-tracks/2/type = "method"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(1.16667),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
