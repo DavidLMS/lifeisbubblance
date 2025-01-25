@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://c21hyka0aju0f"]
+[gd_scene load_steps=16 format=4 uid="uid://c21hyka0aju0f"]
 
 [ext_resource type="Texture2D" uid="uid://c367mcobecici" path="res://assets/bricks.png" id="1_03on1"]
 [ext_resource type="Texture2D" uid="uid://cj7ixfy53dqut" path="res://assets/external/Main Character - Male - Full spritesheet - No Guide.png" id="2_ktwyd"]
