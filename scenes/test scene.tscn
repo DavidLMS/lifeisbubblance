@@ -156,7 +156,7 @@ tile_set = SubResource("TileSet_nt62d")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["player"]]
 z_index = 1
 position = Vector2(-9, 263)
 collision_layer = 2
@@ -179,7 +179,6 @@ sprite_frames = SubResource("SpriteFrames_g8iyg")
 autoplay = "default"
 
 [node name="RigidBody2D" parent="." instance=ExtResource("5_2gpxk")]
-max_contacts_reported = 1
 
 [node name="TextureRect" type="TextureRect" parent="."]
 modulate = Color(0.699653, 0.699653, 0.699653, 1)
