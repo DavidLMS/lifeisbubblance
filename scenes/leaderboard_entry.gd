@@ -12,4 +12,4 @@ func _set_score(score: int) -> void:
 func set_data(entry: TaloLeaderboardEntry) -> void:
 	_set_pos(entry.position)
 	_set_username(entry.player_alias.identifier)
-	_set_score(entry.score)
+	_set_score(int(entry.score))
