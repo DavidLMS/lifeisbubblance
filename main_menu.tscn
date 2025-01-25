@@ -1,9 +1,84 @@
-[gd_scene load_steps=5 format=3 uid="uid://d2yhro4psj7do"]
+[gd_scene load_steps=12 format=3 uid="uid://d2yhro4psj7do"]
 
 [ext_resource type="Script" path="res://main_menu.gd" id="1_hlcug"]
 [ext_resource type="Texture2D" uid="uid://die06k11lyxus" path="res://assets/fondos/polo3.jpg" id="2_3jgat"]
 [ext_resource type="PackedScene" uid="uid://dppy2wnymlho5" path="res://main_menu_player_anim.tscn" id="2_b75xe"]
 [ext_resource type="FontFile" uid="uid://d4kiqrgdxtgln" path="res://assets/fonts/bubble-bobble-font/BubbleBobble-MVpLp.otf" id="4_28pov"]
+[ext_resource type="PackedScene" uid="uid://l02d4varvsyt" path="res://scenes/main_menu_burbujas.tscn" id="5_6ekn5"]
+
+[sub_resource type="Animation" id="Animation_diahu"]
+resource_name = "move"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(15, 357), Vector2(101, 377)]
+}
+
+[sub_resource type="Animation" id="Animation_h80ks"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(15, 357)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fv2uh"]
+_data = {
+"RESET": SubResource("Animation_h80ks"),
+"move": SubResource("Animation_diahu")
+}
+
+[sub_resource type="Animation" id="Animation_mqy8q"]
+resource_name = "move"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(418, 498), Vector2(289, 517)]
+}
+
+[sub_resource type="Animation" id="Animation_b3w25"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(418, 498)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lsuc5"]
+_data = {
+"RESET": SubResource("Animation_b3w25"),
+"move": SubResource("Animation_mqy8q")
+}
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -14,23 +89,61 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_hlcug")
 
-[node name="Polo3" type="Sprite2D" parent="."]
+[node name="Fondo" type="Sprite2D" parent="."]
 position = Vector2(642, 328)
 texture = ExtResource("2_3jgat")
 
+[node name="MainMenuPlayerAnim" parent="Fondo" instance=ExtResource("2_b75xe")]
+position = Vector2(-304, 185)
+
+[node name="MainMenuBurbujas" parent="Fondo" instance=ExtResource("5_6ekn5")]
+position = Vector2(15, 357)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Fondo/MainMenuBurbujas"]
+libraries = {
+"": SubResource("AnimationLibrary_fv2uh")
+}
+autoplay = "move"
+
+[node name="MainMenuBurbujas2" parent="Fondo" instance=ExtResource("5_6ekn5")]
+position = Vector2(418, 498)
+scale = Vector2(-1, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Fondo/MainMenuBurbujas2"]
+libraries = {
+"": SubResource("AnimationLibrary_lsuc5")
+}
+autoplay = "move"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -520.0
+offset_right = -170.0
+offset_bottom = 56.0
+grow_horizontal = 2
+scale = Vector2(3, 3)
+theme_override_colors/font_color = Color(0.54902, 0.745098, 0.87451, 1)
+theme_override_fonts/font = ExtResource("4_28pov")
+theme_override_font_sizes/font_size = 50
+text = "Life is Bubblance"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
-anchors_preset = -1
+anchors_preset = 7
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -36.0
-offset_top = 200.0
-offset_right = 35.0
-offset_bottom = 50.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -200.0
+offset_right = 100.0
 grow_horizontal = 2
-grow_vertical = 2
+grow_vertical = 0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
@@ -55,26 +168,6 @@ layout_mode = 2
 focus_neighbor_top = NodePath("../RecordsButton")
 focus_previous = NodePath("../RecordsButton")
 text = "Salir"
-
-[node name="MainMenuPlayerAnim" parent="." instance=ExtResource("2_b75xe")]
-position = Vector2(257, 516)
-
-[node name="Label" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -520.0
-offset_right = -170.0
-offset_bottom = 56.0
-grow_horizontal = 2
-scale = Vector2(3, 3)
-theme_override_colors/font_color = Color(0.54902, 0.745098, 0.87451, 1)
-theme_override_fonts/font = ExtResource("4_28pov")
-theme_override_font_sizes/font_size = 50
-text = "Life is Bubblance"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/RecordsButton" to="." method="_on_records_button_pressed"]
