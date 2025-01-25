@@ -1,10 +1,10 @@
 [gd_scene load_steps=13 format=3 uid="uid://d2yhro4psj7do"]
 
-[ext_resource type="Script" path="res://main_menu.gd" id="1_hlcug"]
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_hlcug"]
 [ext_resource type="Texture2D" uid="uid://die06k11lyxus" path="res://assets/fondos/polo3.jpg" id="2_3jgat"]
-[ext_resource type="PackedScene" uid="uid://dppy2wnymlho5" path="res://main_menu_player_anim.tscn" id="2_b75xe"]
+[ext_resource type="PackedScene" uid="uid://dppy2wnymlho5" path="res://scenes/main_menu_player_anim.tscn" id="2_b75xe"]
 [ext_resource type="FontFile" uid="uid://d4kiqrgdxtgln" path="res://assets/fonts/bubble-bobble-font/BubbleBobble-MVpLp.otf" id="4_28pov"]
-[ext_resource type="PackedScene" uid="uid://drjb6aynpc6b0" path="res://scenes/main_menu_burbujas.tscn" id="5_6ekn5"]
+[ext_resource type="PackedScene" path="res://scenes/main_menu_burbujas.tscn" id="5_6ekn5"]
 
 [sub_resource type="Animation" id="Animation_h80ks"]
 length = 0.001

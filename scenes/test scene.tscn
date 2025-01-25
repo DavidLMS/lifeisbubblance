@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scenes/character_body_2d.gd" id="2_mkqmk"]
 [ext_resource type="PackedScene" uid="uid://d0a67jc8hum05" path="res://scenes/weapon.tscn" id="3_t1mx1"]
 [ext_resource type="Texture2D" uid="uid://bxwca4d31lwdb" path="res://assets/character.png" id="4_kmncs"]
-[ext_resource type="PackedScene" uid="uid://cwsh04qrbdgdf" path="res://bubble.tscn" id="5_2gpxk"]
+[ext_resource type="PackedScene" uid="uid://cwsh04qrbdgdf" path="res://scenes/bubble.tscn" id="5_2gpxk"]
 [ext_resource type="Texture2D" uid="uid://dp5kjlea5k74f" path="res://assets/character_run.png" id="5_e3spd"]
 [ext_resource type="Texture2D" uid="uid://juayrwfl4jqd" path="res://assets/fondos/polo2.jpg" id="6_n3y7c"]
 [ext_resource type="Texture2D" uid="uid://dsps3byl7hfe7" path="res://assets/health_bar.png" id="8_1cx2e"]

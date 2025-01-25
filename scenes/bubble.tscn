@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cwsh04qrbdgdf"]
 
-[ext_resource type="Script" path="res://bubble.gd" id="1_ynt4x"]
+[ext_resource type="Script" path="res://scripts/bubble.gd" id="1_ynt4x"]
 [ext_resource type="Texture2D" uid="uid://3f53830vr3si" path="res://assets/external/test_bubble.png" id="2_41qcv"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_xa1sl"]
@@ -20,6 +20,8 @@ collision_layer = 16
 physics_material_override = SubResource("PhysicsMaterial_xa1sl")
 gravity_scale = 0.0
 lock_rotation = true
+contact_monitor = true
+max_contacts_reported = 1
 linear_velocity = Vector2(350, 200)
 linear_damp_mode = 1
 angular_damp_mode = 1
