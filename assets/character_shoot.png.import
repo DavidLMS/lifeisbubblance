@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://df8t4bwreoqvn"
-path="res://.godot/imported/Colored_Blue_Block-64x32 v2.png-cc0ffb60acdf87e0aae5d94d46275ef2.ctex"
+uid="uid://bxwca4d31lwdb"
+path="res://.godot/imported/character_shoot.png-459e821f2e6e6f2e0a47f08693282987.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Colored_Blue_Block-64x32 v2.png"
-dest_files=["res://.godot/imported/Colored_Blue_Block-64x32 v2.png-cc0ffb60acdf87e0aae5d94d46275ef2.ctex"]
+source_file="res://assets/character_shoot.png"
+dest_files=["res://.godot/imported/character_shoot.png-459e821f2e6e6f2e0a47f08693282987.ctex"]
 
 [params]
 

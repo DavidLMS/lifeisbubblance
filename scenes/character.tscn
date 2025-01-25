@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/character_body_2d.gd" id="1_4jidw"]
 [ext_resource type="PackedScene" uid="uid://d0a67jc8hum05" path="res://scenes/weapon.tscn" id="2_dhahq"]
-[ext_resource type="Texture2D" uid="uid://bxwca4d31lwdb" path="res://assets/character.png" id="3_8ecqg"]
+[ext_resource type="Texture2D" uid="uid://bxwca4d31lwdb" path="res://assets/character_shoot.png" id="3_8ecqg"]
 [ext_resource type="Texture2D" uid="uid://dp5kjlea5k74f" path="res://assets/character_run.png" id="4_bnsme"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vb5j5"]
