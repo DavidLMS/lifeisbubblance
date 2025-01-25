@@ -23,6 +23,7 @@ linear_damp_mode = 1
 angular_damp_mode = 1
 constant_force = Vector2(15, 10)
 script = ExtResource("1_ynt4x")
+next_bubble_count = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 0.5)
