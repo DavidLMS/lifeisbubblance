@@ -20,7 +20,7 @@ func _set_entry_count():
 	if entries_container.get_child_count() == 0:
 		info_label.text = "No entries yet!" if not _entries_error else "Failed loading leaderboard %s. Does it exist?" % leaderboard_internal_name
 	else:
-		info_label.text = "Only top 10 are shown!" % entries_container.get_child_count()
+		info_label.text = "Only top 10 are shown!"
 
 func _create_entry(entry: TaloLeaderboardEntry) -> void:
 	var entry_instance = entry_scene.instantiate()
@@ -55,7 +55,6 @@ func _load_entries() -> void:
 			_entries_error = true
 			return
 
-		var entries = res[0]
 		var last_page = res[2]
 
 		if last_page:
