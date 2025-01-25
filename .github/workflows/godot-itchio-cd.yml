@@ -14,11 +14,11 @@ jobs:
      - name: Checkout code
        uses: actions/checkout@v3
        
-     #- name: Set Talo API Key
-     #  run: |
-     #    sed -i "s|access_key=.*|access_key=\"$TALO_API_KEY\"|" addons/talo/settings.cfg
-     #  env:
-     #    TALO_API_KEY: ${{ secrets.TALO_API_KEY }}
+     - name: Set Talo API Key
+       run: |
+         sed -i "s|access_key=.*|access_key=\"$TALO_API_KEY\"|" addons/talo/settings.cfg
+       env:
+         TALO_API_KEY: ${{ secrets.TALO_API_KEY }}
 
      - name: Godot Export
        uses: firebelley/godot-export@v6.0.0
