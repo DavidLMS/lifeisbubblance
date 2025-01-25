@@ -15,10 +15,18 @@ run/main_scene="res://scenes/test scene.tscn"
 config/features=PackedStringArray("4.3")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Events="*res://events.gd"
+
 [display]
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/AS2P/plugin.cfg")
 
 [layer_names]
 

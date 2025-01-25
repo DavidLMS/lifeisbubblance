@@ -8,13 +8,24 @@ extends CharacterBody2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
+var shooting = false
+
+
+func shooting_finished():
+	shooting = false
+	
+func _ready() -> void:
+	Events.shoot_finished.connect(shooting_finished)
+
+
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
-	if Input.is_action_just_pressed("ui_accept"):
+	if Input.is_action_just_pressed("ui_accept") and not shooting:
+		shooting = true
 		var shoot = weapon.instantiate()
 		get_tree().root.add_child(shoot)
 		shoot.global_position = global_position + weapon_offset

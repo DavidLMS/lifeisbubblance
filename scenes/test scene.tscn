@@ -1,9 +1,10 @@
-[gd_scene load_steps=15 format=4 uid="uid://c21hyka0aju0f"]
+[gd_scene load_steps=16 format=4 uid="uid://c21hyka0aju0f"]
 
 [ext_resource type="Texture2D" uid="uid://c367mcobecici" path="res://assets/bricks.png" id="1_03on1"]
 [ext_resource type="Texture2D" uid="uid://cj7ixfy53dqut" path="res://assets/external/Main Character - Male - Full spritesheet - No Guide.png" id="2_ktwyd"]
 [ext_resource type="Script" path="res://scenes/character_body_2d.gd" id="2_mkqmk"]
 [ext_resource type="PackedScene" uid="uid://d0a67jc8hum05" path="res://scenes/weapon.tscn" id="3_t1mx1"]
+[ext_resource type="PackedScene" uid="uid://cwsh04qrbdgdf" path="res://bubble.tscn" id="5_2gpxk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fie4b"]
 texture = ExtResource("1_03on1")
@@ -107,3 +108,6 @@ shape = SubResource("RectangleShape2D_vb5j5")
 texture_filter = 1
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_g8iyg")
+
+[node name="RigidBody2D" parent="." instance=ExtResource("5_2gpxk")]
+max_contacts_reported = 1
