@@ -179,7 +179,6 @@ tile_set = SubResource("TileSet_nt62d")
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_y1lqe")]
 
 [node name="Bubble" parent="." instance=ExtResource("5_2gpxk")]
-visible = false
 
 [node name="TextureRect" type="TextureRect" parent="."]
 modulate = Color(0.699653, 0.699653, 0.699653, 1)

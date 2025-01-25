@@ -11,6 +11,8 @@ extends RigidBody2D
 @export var scale_reduction = .5
 @export var scale_min = 1
 
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+
 var _camera_shake_noise: FastNoiseLite
 var bubble_size: float = 4.0
 
@@ -40,7 +42,8 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 				nb.linear_velocity = velocity_correction
 				nb.set_sprite_scale(sprite.scale.x * scale_reduction)
 				get_tree().root.add_child(nb)
-		queue_free()
+		# queue_free()
+		animation_player.play("explosion")
 
 func get_quadrant(velocity: Vector2, i: int) -> Vector2:
 	return velocity.rotated(angle_offset if i else -angle_offset)
@@ -52,7 +55,8 @@ func set_sprite_scale(new_scale):
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		Global.current_health -= 50
-		queue_free()
+		#queue_free()
+		animation_player.play("explosion")
 		
 func apply_effect(shake:bool = true):
 	var blink_tween = get_tree().create_tween()
