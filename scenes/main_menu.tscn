@@ -1,10 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://d2yhro4psj7do"]
+[gd_scene load_steps=15 format=3 uid="uid://d2yhro4psj7do"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_hlcug"]
 [ext_resource type="Texture2D" uid="uid://die06k11lyxus" path="res://assets/fondos/polo3.jpg" id="2_3jgat"]
 [ext_resource type="PackedScene" uid="uid://dppy2wnymlho5" path="res://scenes/main_menu_player_anim.tscn" id="2_b75xe"]
 [ext_resource type="FontFile" uid="uid://d4kiqrgdxtgln" path="res://assets/fonts/bubble-bobble-font/BubbleBobble-MVpLp.otf" id="4_28pov"]
-[ext_resource type="PackedScene" uid="uid://drjb6aynpc6b0" path="res://scenes/main_menu_burbujas.tscn" id="5_6ekn5"]
+[ext_resource type="PackedScene" path="res://scenes/main_menu_burbujas.tscn" id="5_6ekn5"]
 
 [sub_resource type="Animation" id="Animation_h80ks"]
 length = 0.001
@@ -85,6 +85,13 @@ font_size = 50
 font_color = Color(0.54902, 0.745098, 0.87451, 1)
 outline_size = 10
 outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="InputEventKey" id="InputEventKey_k26m5"]
+device = -1
+keycode = 4194305
+
+[sub_resource type="Shortcut" id="Shortcut_mts2g"]
+events = [SubResource("InputEventKey_k26m5")]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -176,6 +183,7 @@ text = "HIGH SCORES"
 layout_mode = 2
 focus_neighbor_top = NodePath("../RecordsButton")
 focus_previous = NodePath("../RecordsButton")
+shortcut = SubResource("Shortcut_mts2g")
 text = "EXIT"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]

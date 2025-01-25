@@ -1,15 +1,18 @@
-[gd_scene load_steps=22 format=4 uid="uid://c21hyka0aju0f"]
+[gd_scene load_steps=25 format=4 uid="uid://c21hyka0aju0f"]
 
 [ext_resource type="Texture2D" uid="uid://c367mcobecici" path="res://assets/bricks.png" id="1_03on1"]
 [ext_resource type="Texture2D" uid="uid://byjooygmpccwh" path="res://assets/gun.png" id="1_uvuk3"]
 [ext_resource type="Script" path="res://scenes/main_scene.gd" id="1_yjfs7"]
-[ext_resource type="PackedScene" path="res://scenes/character.tscn" id="2_y1lqe"]
+[ext_resource type="PackedScene" uid="uid://ym8qoe8qsph7" path="res://scenes/character.tscn" id="2_y1lqe"]
 [ext_resource type="PackedScene" uid="uid://cwsh04qrbdgdf" path="res://scenes/bubble.tscn" id="5_2gpxk"]
 [ext_resource type="Texture2D" uid="uid://juayrwfl4jqd" path="res://assets/fondos/polo2.jpg" id="6_n3y7c"]
 [ext_resource type="Texture2D" uid="uid://dsps3byl7hfe7" path="res://assets/health_bar.png" id="8_1cx2e"]
 [ext_resource type="Script" path="res://scripts/health_bar.gd" id="9_4u1p7"]
 [ext_resource type="Script" path="res://scripts/control_timer.gd" id="9_5dmq0"]
 [ext_resource type="FontFile" uid="uid://d4kiqrgdxtgln" path="res://assets/fonts/bubble-bobble-font/BubbleBobble-MVpLp.otf" id="10_1m384"]
+[ext_resource type="Script" path="res://scripts/helpers.gd" id="11_cqdfg"]
+[ext_resource type="Texture2D" uid="uid://dc1ufmpsoiioe" path="res://assets/arrow_keys_helper.png" id="12_blk4h"]
+[ext_resource type="Texture2D" uid="uid://m6okt4uq1ajs" path="res://assets/space_key_helper.png" id="13_x8rdk"]
 
 [sub_resource type="Animation" id="Animation_fas7d"]
 length = 2.5
@@ -222,4 +225,23 @@ label_settings = SubResource("LabelSettings_m5dha")
 autostart = true
 script = ExtResource("9_5dmq0")
 
+[node name="Helpers" type="Node2D" parent="."]
+script = ExtResource("11_cqdfg")
+
+[node name="MoveHelper" type="Sprite2D" parent="Helpers"]
+position = Vector2(-158, 0)
+scale = Vector2(4, 4)
+texture = ExtResource("12_blk4h")
+
+[node name="ShootHelper" type="Sprite2D" parent="Helpers"]
+position = Vector2(158, 0)
+scale = Vector2(4, 4)
+texture = ExtResource("13_x8rdk")
+
+[node name="HelperTimer" type="Timer" parent="Helpers"]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
 [connection signal="timeout" from="Timer" to="Timer" method="_on_timeout"]
+[connection signal="timeout" from="Helpers/HelperTimer" to="Helpers" method="_on_helper_timer_timeout"]
