@@ -13,7 +13,7 @@ jobs:
    steps:
      - name: Checkout code
        uses: actions/checkout@v3
-      
+
      - name: Godot Export
        uses: firebelley/godot-export@v6.0.0
        with:
@@ -22,6 +22,8 @@ jobs:
          relative_project_path: ./
          use_preset_export_path: true
          verbose: true
+       env:
+         SILENTWOLF_API_KEY: ${{ secrets.SILENTWOLF_API_KEY }}
          
      - uses: actions/upload-artifact@v3
        with:
