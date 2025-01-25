@@ -28,7 +28,9 @@ func _physics_process(delta: float) -> void:
 		get_tree().quit()
 
 	if Input.is_action_just_pressed("ui_accept") and not shooting:
+		sprite.play("shoot")
 		shooting = true
+		await get_tree().create_timer(0.3).timeout
 		var shoot = weapon.instantiate()
 		get_tree().root.add_child(shoot)
 		shoot.global_position = global_position + weapon_offset
@@ -44,9 +46,15 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 	if velocity.x != 0:
-		sprite.flip_h = velocity.x>0 
+		sprite.flip_h = velocity.x<0 
 		sprite.play("default")
 	else:
-		sprite.stop()
+		if sprite.animation == "default":
+			sprite.stop()
 		 
 		
+
+
+func _on_animated_sprite_2d_animation_finished() -> void:
+	if sprite.animation == "shoot":
+		sprite.play("default")
