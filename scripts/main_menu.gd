@@ -3,6 +3,8 @@ extends Control
 @onready var play_button: Button = $MarginContainer/VBoxContainer/PlayButton
 
 func _ready() -> void:
+	if OS.get_name() == "Web":
+		$MarginContainer/VBoxContainer/QuitButton.hide()
 	play_button.grab_focus()
 	await get_tree().process_frame
 	if has_node("/root/AudioManager"):

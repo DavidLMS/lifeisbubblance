@@ -212,9 +212,9 @@ texture_red = SubResource("AtlasTexture_ibm2w")
 
 [node name="ScoreLabel" type="Label" parent="."]
 offset_left = -569.0
-offset_top = -297.0
+offset_top = -296.0
 offset_right = -409.0
-offset_bottom = -241.0
+offset_bottom = -240.0
 text = "SCORE: 0"
 label_settings = SubResource("LabelSettings_m5dha")
 
