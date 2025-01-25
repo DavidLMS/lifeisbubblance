@@ -15,6 +15,7 @@ func _ready() -> void:
 	leaderboard_name.text = leaderboard_name.text.replace("{leaderboard}", leaderboard_internal_name)
 	await _load_entries()
 	_set_entry_count()
+	get_node("/root/AudioManager").play_scene_music(2)
 
 func _set_entry_count():
 	if entries_container.get_child_count() == 0:

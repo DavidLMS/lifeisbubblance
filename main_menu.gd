@@ -4,6 +4,9 @@ extends Control
 
 func _ready() -> void:
 	play_button.grab_focus()
+	await get_tree().process_frame
+	if has_node("/root/AudioManager"):
+		get_node("/root/AudioManager").play_scene_music(0)
 
 func _on_play_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/test scene.tscn")
