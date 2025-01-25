@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://cwsh04qrbdgdf"]
 
-[ext_resource type="Texture2D" uid="uid://bt7qbjgl6wswf" path="res://assets/bubble.png" id="1_0yblc"]
 [ext_resource type="Script" path="res://bubble.gd" id="1_ynt4x"]
+[ext_resource type="Texture2D" uid="uid://3f53830vr3si" path="res://assets/external/test_bubble.png" id="2_41qcv"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_xa1sl"]
 friction = 0.0
@@ -34,7 +34,7 @@ shape = SubResource("RectangleShape2D_7ol0y")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 scale = Vector2(4, 4)
-texture = ExtResource("1_0yblc")
+texture = ExtResource("2_41qcv")
 
 [node name="Area2D" type="Area2D" parent="." groups=["bubble"]]
 collision_layer = 4
