@@ -15,7 +15,6 @@ func shooting_finished():
 	shooting = false
 	
 func _ready() -> void:
-	get_node("/root/AudioManager").play_scene_music(1)
 	Events.shoot_finished.connect(shooting_finished)
 
 
