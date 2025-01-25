@@ -179,7 +179,6 @@ sprite_frames = SubResource("SpriteFrames_g8iyg")
 autoplay = "default"
 
 [node name="RigidBody2D" parent="." instance=ExtResource("5_2gpxk")]
-max_contacts_reported = 1
 
 [node name="TextureRect" type="TextureRect" parent="."]
 modulate = Color(0.699653, 0.699653, 0.699653, 1)
