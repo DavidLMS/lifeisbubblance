@@ -24,6 +24,9 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
+	if Input.is_action_just_pressed("escape"):
+		get_tree().quit()
+
 	if Input.is_action_just_pressed("ui_accept") and not shooting:
 		shooting = true
 		var shoot = weapon.instantiate()
@@ -46,3 +49,4 @@ func _physics_process(delta: float) -> void:
 	else:
 		sprite.stop()
 		 
+		
