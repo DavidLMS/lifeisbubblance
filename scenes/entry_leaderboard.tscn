@@ -1,4 +1,8 @@
-[gd_scene format=3 uid="uid://xobsyl8y365x"]
+[gd_scene load_steps=2 format=3 uid="uid://cift478fm3a5t"]
+
+[ext_resource type="Script" path="res://scenes/leaderboard_entry.gd" id="1_if8y6"]
 
 [node name="EntryLeaderboard" type="Label"]
-text = "{pos}. {username} scored: {score} points"
+text = "{score} {username}"
+horizontal_alignment = 1
+script = ExtResource("1_if8y6")
