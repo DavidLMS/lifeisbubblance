@@ -5,7 +5,7 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_3qwgn"]
 font = ExtResource("1_bigv6")
-font_size = 40
+font_size = 20
 
 [node name="EntryLeaderboard" type="Label"]
 text = "{score} {username}"

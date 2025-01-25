@@ -100,4 +100,11 @@ size_flags_horizontal = 4
 theme = ExtResource("2_bk0mc")
 text = "Add entry"
 
+[node name="BackButton" type="Button" parent="UI/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "MAIN MENU"
+
 [connection signal="pressed" from="UI/MarginContainer/VBoxContainer/Submit" to="." method="_on_submit_pressed"]
+[connection signal="pressed" from="UI/MarginContainer/VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]

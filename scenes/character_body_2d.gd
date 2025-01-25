@@ -25,7 +25,8 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 
 	if Input.is_action_just_pressed("escape"):
-		get_tree().quit()
+		if !(OS.get_name() == "Web"):
+			get_tree().quit()
 
 	var direction := Input.get_axis("ui_left", "ui_right")
 

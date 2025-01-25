@@ -72,3 +72,6 @@ func _on_submit_pressed() -> void:
 	info_label.text = "You scored %s points" % [score, " Your highscore was updated!" if res[1] else ""]
 
 	_build_entries()
+
+func _on_back_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
