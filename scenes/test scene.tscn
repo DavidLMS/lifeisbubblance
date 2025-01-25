@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://c367mcobecici" path="res://assets/bricks.png" id="1_03on1"]
 [ext_resource type="Texture2D" uid="uid://byjooygmpccwh" path="res://assets/gun.png" id="1_uvuk3"]
 [ext_resource type="Script" path="res://scenes/main_scene.gd" id="1_yjfs7"]
-[ext_resource type="PackedScene" path="res://scenes/character.tscn" id="2_y1lqe"]
+[ext_resource type="PackedScene" uid="uid://ym8qoe8qsph7" path="res://scenes/character.tscn" id="2_y1lqe"]
 [ext_resource type="PackedScene" uid="uid://cwsh04qrbdgdf" path="res://scenes/bubble.tscn" id="5_2gpxk"]
 [ext_resource type="Texture2D" uid="uid://juayrwfl4jqd" path="res://assets/fondos/polo2.jpg" id="6_n3y7c"]
 [ext_resource type="Texture2D" uid="uid://dsps3byl7hfe7" path="res://assets/health_bar.png" id="8_1cx2e"]
@@ -176,7 +176,6 @@ tile_set = SubResource("TileSet_nt62d")
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_y1lqe")]
 
 [node name="Bubble" parent="." instance=ExtResource("5_2gpxk")]
-visible = false
 
 [node name="TextureRect" type="TextureRect" parent="."]
 modulate = Color(0.699653, 0.699653, 0.699653, 1)
