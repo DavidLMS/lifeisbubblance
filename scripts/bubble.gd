@@ -3,6 +3,7 @@ extends RigidBody2D
 @onready var sprite = $Sprite2D
 @onready var collider = $Area2D/CollisionShape2D
 @onready var rigid_collider = $CollisionShape2D
+@onready var camera = $"../Camera2D"
 
 @export var next_bubble: PackedScene
 @export var next_bubble_count: int
@@ -10,6 +11,7 @@ extends RigidBody2D
 @export var scale_reduction = .5
 @export var scale_min = 1
 
+var _camera_shake_noise: FastNoiseLite
 var bubble_size: float = 4.0
 
 # Called when the node enters the scene tree for the first time.
@@ -51,3 +53,18 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		Global.current_health -= 50
 		queue_free()
+		
+func apply_effect(shake:bool = true):
+	var blink_tween = get_tree().create_tween()
+	blink_tween.tween_method(set_shader_intensity, 1.0, 0.0, 0.5)
+	if shake:
+		var camera_tween = get_tree().create_tween()
+		camera_tween.tween_method(start_camera_shake, 5.0, 1.0, 0.5)
+	
+func start_camera_shake(intensity: float):
+	var camera_offset = _camera_shake_noise.get_noise_1d(Time.get_ticks_msec()) * intensity
+	camera.offset.x = camera_offset
+	camera.offset.y = camera_offset
+
+func set_shader_intensity(value: float):
+	sprite.material.set_shader_parameter("blink_intensity", value)
