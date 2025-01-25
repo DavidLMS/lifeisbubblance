@@ -10,11 +10,7 @@ const MIN_VOLUME = -80
 func _ready():
 	add_child(audio_player)
 	
-	var track1 = load("res://assets/music/menu.ogg") as AudioStreamOggVorbis
-	var track2 = load("res://assets/music/main.ogg") as AudioStreamOggVorbis
-	var track3 = load("res://assets/music/leaderboard.ogg") as AudioStreamOggVorbis
-	
-	audio_player.stream = track1
+	audio_player.stream = load("res://assets/music/menu.ogg") as AudioStreamOggVorbis
 	audio_player.volume_db = MAX_VOLUME
 
 func change_track(track_index: int):
