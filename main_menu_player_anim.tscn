@@ -1,0 +1,89 @@
+[gd_scene load_steps=13 format=3 uid="uid://dppy2wnymlho5"]
+
+[ext_resource type="Texture2D" uid="uid://dbgu0lknqumax" path="res://assets/player_pang_spritesheet.png" id="1_ux7b1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lhx7c"]
+atlas = ExtResource("1_ux7b1")
+region = Rect2(620, 0, 62, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0pgtb"]
+atlas = ExtResource("1_ux7b1")
+region = Rect2(744, 0, 62, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8c486"]
+atlas = ExtResource("1_ux7b1")
+region = Rect2(868, 0, 62, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tbv7a"]
+atlas = ExtResource("1_ux7b1")
+region = Rect2(992, 0, 62, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v158b"]
+atlas = ExtResource("1_ux7b1")
+region = Rect2(1116, 0, 62, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qof18"]
+atlas = ExtResource("1_ux7b1")
+region = Rect2(1240, 0, 62, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vpymh"]
+atlas = ExtResource("1_ux7b1")
+region = Rect2(1364, 0, 62, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_erc18"]
+atlas = ExtResource("1_ux7b1")
+region = Rect2(1488, 0, 62, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hmj3e"]
+atlas = ExtResource("1_ux7b1")
+region = Rect2(1612, 0, 62, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l2t6a"]
+atlas = ExtResource("1_ux7b1")
+region = Rect2(1736, 0, 62, 63)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bt7ff"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lhx7c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0pgtb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8c486")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tbv7a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v158b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qof18")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vpymh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_erc18")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hmj3e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l2t6a")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="MainMenuPlayerAnim" type="Node2D"]
+scale = Vector2(4, 4)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_bt7ff")
+autoplay = "default"
+frame_progress = 0.721505
