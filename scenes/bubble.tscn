@@ -1,9 +1,11 @@
-[gd_scene load_steps=15 format=3 uid="uid://cwsh04qrbdgdf"]
+[gd_scene load_steps=17 format=3 uid="uid://cwsh04qrbdgdf"]
 
 [ext_resource type="Script" path="res://scripts/bubble.gd" id="1_ynt4x"]
 [ext_resource type="Texture2D" uid="uid://3f53830vr3si" path="res://assets/external/test_bubble.png" id="2_41qcv"]
 [ext_resource type="Material" uid="uid://d1k8y7j522o6i" path="res://shaders/wall_hit.tres" id="2_ktx41"]
+[ext_resource type="Texture2D" uid="uid://ckfj8cgahm4g0" path="res://assets/external/cyan_bubble.png" id="2_r1k55"]
 [ext_resource type="AudioStream" uid="uid://ijhodnys50bt" path="res://assets/sfx/bubbles.wav" id="3_04aa5"]
+[ext_resource type="Texture2D" uid="uid://d0m7868x2tq31" path="res://assets/external/green_bubble.png" id="3_dsdcb"]
 [ext_resource type="Texture2D" uid="uid://cvyqc7e2a31lh" path="res://assets/key_up.png" id="5_pltw6"]
 [ext_resource type="Texture2D" uid="uid://w16pnyuyskiu" path="res://assets/key_right.png" id="6_m5p6e"]
 [ext_resource type="Texture2D" uid="uid://3dprstvgogt7" path="res://assets/key_down.png" id="7_m4jo5"]
@@ -131,6 +133,8 @@ linear_damp_mode = 1
 angular_damp_mode = 1
 constant_force = Vector2(15, 10)
 script = ExtResource("1_ynt4x")
+player_time_texture = ExtResource("2_r1k55")
+bubble_time_texture = ExtResource("3_dsdcb")
 next_bubble_count = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

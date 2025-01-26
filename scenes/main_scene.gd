@@ -5,6 +5,9 @@ extends Node2D
 
 @onready var animation = $AnimationPlayer
 
+func _init() -> void:
+	Events.init()
+
 func popup_bubbles() -> void:
 	for i in range(Global.bubble_count):
 		var nb = bubble_scene.instantiate()

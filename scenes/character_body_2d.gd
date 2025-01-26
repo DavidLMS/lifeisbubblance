@@ -21,17 +21,32 @@ func _ready() -> void:
 	_camera_shake_noise = FastNoiseLite.new()
 	Events.shoot_finished.connect(shooting_finished)
 	Events.death.connect(on_death)
+	Events.bubble_hit_wall.connect(bubble_hit_wall)
+
+func bubble_hit_wall():
+	if Events.bubbles_green == 0:
+		get_tree().create_timer(Events.bubble_time_wait).timeout.connect(end_bubble_time)
+	Events.bubbles_green += 1
+
+func end_bubble_time():
+	Events.bubbles_green = 0
+	Events.start_player_time()
+	get_tree().create_timer(Events.bubble_time_wait).timeout.connect(end_player_time)
+	
+func end_player_time():
+	Events.start_bubble_time()
 
 func on_death() -> void:
-	print("Adios, mundo cruel")
+	Events.start_player_time()
+	Engine.time_scale = 1.0
 	is_death = true
 	set_physics_process(false)
 	collider.queue_free()
 	await get_tree().create_timer(.6).timeout
 	var death_tween = get_tree().create_tween()
 	sprite.material = null
-	death_tween.tween_method(death, 0.0, 1.0, 2.0)
-	get_tree().create_timer(4.1).timeout.connect(the_end)
+	death_tween.tween_method(death, 0.0, 1.0, 1.0)
+	get_tree().create_timer(1.1).timeout.connect(the_end)
 
 func the_end():
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
@@ -51,7 +66,7 @@ func _physics_process(delta: float) -> void:
 		#if !(OS.get_name() == "Web"):
 		#	get_tree().quit()
 
-	var direction := Input.get_axis("ui_left", "ui_right")
+	var direction := Input.get_axis("ui_left", "ui_right") if not Events.is_bubble_time() or Events.bubbles_green == 0 else 0.0
 
 	if Input.is_action_just_pressed("ui_accept") and not shooting:
 		sprite.play("shoot")
