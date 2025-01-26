@@ -19,6 +19,7 @@ const JUMP_VELOCITY = -400.0
 var shooting = false
 var is_death = false
 var _camera_shake_noise: FastNoiseLite
+var random_dir: float = 0.0
 
 func shooting_finished():
 	shooting = false
@@ -63,7 +64,8 @@ func on_death() -> void:
 	get_tree().create_timer(1.1).timeout.connect(the_end)
 
 func the_end():
-	get_tree().change_scene_to_file("res://scenes/gameover.tscn")
+	if get_tree():
+		get_tree().change_scene_to_file("res://scenes/gameover.tscn")
 
 func death(value: float):
 	position.y -= 4.0
@@ -79,7 +81,7 @@ func _physics_process(delta: float) -> void:
 		#if !(OS.get_name() == "Web"):
 		#	get_tree().quit()
 
-	var direction := Input.get_axis("move_left", "move_right") if not Events.is_bubble_time() or Events.bubbles_green == 0 else 0.0
+	var direction := Input.get_axis("move_left", "move_right") if not Events.is_bubble_time() or Events.bubbles_green == 0 else random_dir
 	#var direction := Input.get_axis("move_left", "move_right")
 
 	if Input.is_action_just_pressed("shoot") and not shooting and Events.is_player_time():
@@ -124,3 +126,7 @@ func start_camera_shake(intensity: float):
 
 func set_shader_intensity(value: float):
 	sprite.material.set_shader_parameter("blink_intensity", value)
+
+
+func _on_timer_random_direction_timeout() -> void:
+	random_dir = randi_range(-1.0, 1.0)

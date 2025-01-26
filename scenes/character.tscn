@@ -165,4 +165,9 @@ sprite_frames = SubResource("SpriteFrames_g8iyg")
 autoplay = "default"
 frame_progress = 0.755843
 
+[node name="TimerRandomDirection" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="timeout" from="TimerRandomDirection" to="." method="_on_timer_random_direction_timeout"]
