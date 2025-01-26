@@ -12,6 +12,7 @@ func _ready():
 	
 	audio_player.stream = load("res://assets/music/menu.ogg") as AudioStreamOggVorbis
 	audio_player.volume_db = MAX_VOLUME
+	audio_player.bus = "Music"
 
 func change_track(track_index: int):
 	var track_path = ""
