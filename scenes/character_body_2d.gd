@@ -49,7 +49,7 @@ func on_death() -> void:
 	get_tree().create_timer(1.1).timeout.connect(the_end)
 
 func the_end():
-	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+	get_tree().change_scene_to_file("res://scenes/gameover.tscn")
 
 func death(value: float):
 	position.y -= 4.0
@@ -62,13 +62,13 @@ func _physics_process(delta: float) -> void:
 
 	if Input.is_action_just_pressed("escape"):
 		get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
-		Global.score = 0
 		#if !(OS.get_name() == "Web"):
 		#	get_tree().quit()
 
 	var direction := Input.get_axis("ui_left", "ui_right") if not Events.is_bubble_time() or Events.bubbles_green == 0 else 0.0
+	#var direction := Input.get_axis("move_left", "move_right")
 
-	if Input.is_action_just_pressed("ui_accept") and not shooting:
+	if Input.is_action_just_pressed("shoot") and not shooting:
 		sprite.play("shoot")
 		shooting = true
 		await get_tree().create_timer(0.3).timeout

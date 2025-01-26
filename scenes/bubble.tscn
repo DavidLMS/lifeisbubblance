@@ -64,6 +64,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id="Animation_vprud"]
 resource_name = "explosion"
+length = 0.4
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -107,7 +108,7 @@ tracks/3/path = NodePath(".")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(1),
+"times": PackedFloat32Array(0.39),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
@@ -136,6 +137,7 @@ script = ExtResource("1_ynt4x")
 player_time_texture = ExtResource("2_r1k55")
 bubble_time_texture = ExtResource("3_dsdcb")
 next_bubble_count = 2
+damage = 25
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 0.5)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://b82c8asdgq7ne"]
+[gd_scene load_steps=5 format=3 uid="uid://t2qs4i7j3eev"]
 
 [ext_resource type="Script" path="res://scripts/gameover.gd" id="1_s15k4"]
 [ext_resource type="Theme" uid="uid://ce2uyi827vc5x" path="res://addons/talo/samples/authentication/assets/theme.tres" id="2_kjvpi"]
@@ -54,11 +54,23 @@ text = "SCORE: 0"
 label_settings = SubResource("LabelSettings_gj445")
 horizontal_alignment = 1
 
-[node name="Username" type="TextEdit" parent="UI/MarginContainer/VBoxContainer"]
-unique_name_in_owner = true
+[node name="LineEdit" type="LineEdit" parent="UI/MarginContainer/VBoxContainer"]
+clip_contents = true
 custom_minimum_size = Vector2(400, 40)
 layout_mode = 2
 size_flags_horizontal = 4
+focus_next = NodePath("../Submit")
+theme = ExtResource("2_kjvpi")
+placeholder_text = "Username"
+
+[node name="Username" type="TextEdit" parent="UI/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(400, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+focus_neighbor_bottom = NodePath("../Submit")
+focus_next = NodePath("../Submit")
 theme = ExtResource("2_kjvpi")
 placeholder_text = "Username"
 
