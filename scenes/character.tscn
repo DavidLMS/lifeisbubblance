@@ -163,5 +163,6 @@ position = Vector2(2, 16)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_g8iyg")
 autoplay = "default"
+frame_progress = 0.547592
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

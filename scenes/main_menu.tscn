@@ -1,8 +1,8 @@
 [gd_scene load_steps=15 format=3 uid="uid://d2yhro4psj7do"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_hlcug"]
-[ext_resource type="Texture2D" uid="uid://die06k11lyxus" path="res://assets/fondos/polo3.jpg" id="2_3jgat"]
 [ext_resource type="PackedScene" uid="uid://dppy2wnymlho5" path="res://scenes/main_menu_player_anim.tscn" id="2_b75xe"]
+[ext_resource type="Texture2D" uid="uid://b2my8cndb3i2y" path="res://assets/fondos/polo3_non_wide.jpg" id="2_o40rq"]
 [ext_resource type="FontFile" uid="uid://d4kiqrgdxtgln" path="res://assets/fonts/bubble-bobble-font/BubbleBobble-MVpLp.otf" id="4_28pov"]
 [ext_resource type="PackedScene" uid="uid://drjb6aynpc6b0" path="res://scenes/main_menu_burbujas.tscn" id="5_6ekn5"]
 
@@ -104,7 +104,7 @@ script = ExtResource("1_hlcug")
 
 [node name="Fondo" type="Sprite2D" parent="."]
 position = Vector2(640, 360)
-texture = ExtResource("2_3jgat")
+texture = ExtResource("2_o40rq")
 
 [node name="MainMenuPlayerAnim" parent="Fondo" instance=ExtResource("2_b75xe")]
 position = Vector2(-304, 185)
