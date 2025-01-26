@@ -20,6 +20,7 @@ var shooting = false
 var is_death = false
 var _camera_shake_noise: FastNoiseLite
 var random_dir: float = 0.0
+var shader_level: float = 0.0
 
 func shooting_finished():
 	shooting = false
@@ -37,6 +38,8 @@ func change_caption():
 	bubble_time_caption.visible = Events.is_bubble_time()
 	player_time_tilemap.visible = Events.is_player_time()
 	bubble_time_tilemap.visible = Events.is_bubble_time()
+	shader_level = 0.0 if Events.is_player_time() else 0.5
+	sprite.material.set_shader_parameter("blink_intensity", shader_level)
 
 func bubble_hit_wall():
 	if Events.bubbles_green == 0:
@@ -81,7 +84,7 @@ func _physics_process(delta: float) -> void:
 		#if !(OS.get_name() == "Web"):
 		#	get_tree().quit()
 
-	var direction := Input.get_axis("move_left", "move_right") if not Events.is_bubble_time() or Events.bubbles_green == 0 else random_dir
+	var direction := Input.get_axis("move_left", "move_right") if not Events.is_bubble_time() else random_dir
 	#var direction := Input.get_axis("move_left", "move_right")
 
 	if Input.is_action_just_pressed("shoot") and not shooting and Events.is_player_time():
@@ -113,7 +116,7 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 
 func apply_effect(shake: bool = true):
 	var blink_tween = get_tree().create_tween()
-	blink_tween.tween_method(set_shader_intensity, 1.0, 0.0, 0.5)
+	blink_tween.tween_method(set_shader_intensity, 1.0, shader_level, 0.5)
 	if shake:
 		var camera_tween = get_tree().create_tween()
 		camera_tween.tween_method(start_camera_shake, 5.0, 1.0, 0.5)
