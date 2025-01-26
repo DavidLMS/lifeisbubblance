@@ -1,8 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://cwsh04qrbdgdf"]
+[gd_scene load_steps=15 format=3 uid="uid://cwsh04qrbdgdf"]
 
 [ext_resource type="Script" path="res://scripts/bubble.gd" id="1_ynt4x"]
 [ext_resource type="Texture2D" uid="uid://3f53830vr3si" path="res://assets/external/test_bubble.png" id="2_41qcv"]
+[ext_resource type="Material" uid="uid://d1k8y7j522o6i" path="res://shaders/wall_hit.tres" id="2_ktx41"]
 [ext_resource type="AudioStream" uid="uid://ijhodnys50bt" path="res://assets/sfx/bubbles.wav" id="3_04aa5"]
+[ext_resource type="Texture2D" uid="uid://cvyqc7e2a31lh" path="res://assets/key_up.png" id="5_pltw6"]
+[ext_resource type="Texture2D" uid="uid://w16pnyuyskiu" path="res://assets/key_right.png" id="6_m5p6e"]
+[ext_resource type="Texture2D" uid="uid://3dprstvgogt7" path="res://assets/key_down.png" id="7_m4jo5"]
+[ext_resource type="Texture2D" uid="uid://duopjmgfae4k" path="res://assets/key_left.png" id="8_5o6i5"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_xa1sl"]
 friction = 0.0
@@ -14,7 +19,7 @@ size = Vector2(112, 111)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_65v7u"]
 resource_local_to_scene = true
-radius = 55.0
+radius = 60.0
 
 [sub_resource type="Animation" id="Animation_tiqkn"]
 length = 0.001
@@ -134,12 +139,13 @@ shape = SubResource("RectangleShape2D_7ol0y")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
+material = ExtResource("2_ktx41")
 scale = Vector2(4, 4)
 texture = ExtResource("2_41qcv")
 
 [node name="Area2D" type="Area2D" parent="." groups=["bubble"]]
 collision_layer = 4
-collision_mask = 10
+collision_mask = 11
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_65v7u")
@@ -152,6 +158,29 @@ bus = &"SFX"
 libraries = {
 "": SubResource("AnimationLibrary_7p3wj")
 }
+
+[node name="keys" type="Node2D" parent="."]
+visible = false
+
+[node name="Sprite2D2" type="Sprite2D" parent="keys"]
+position = Vector2(0, -87)
+scale = Vector2(2, 2)
+texture = ExtResource("5_pltw6")
+
+[node name="Sprite2D3" type="Sprite2D" parent="keys"]
+position = Vector2(83, 1)
+scale = Vector2(2, 2)
+texture = ExtResource("6_m5p6e")
+
+[node name="Sprite2D4" type="Sprite2D" parent="keys"]
+position = Vector2(0, 83)
+scale = Vector2(2, 2)
+texture = ExtResource("7_m4jo5")
+
+[node name="Sprite2D5" type="Sprite2D" parent="keys"]
+position = Vector2(-78, 0)
+scale = Vector2(2, 2)
+texture = ExtResource("8_5o6i5")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -1,8 +1,9 @@
-[gd_scene load_steps=24 format=3 uid="uid://ym8qoe8qsph7"]
+[gd_scene load_steps=25 format=3 uid="uid://ym8qoe8qsph7"]
 
 [ext_resource type="Script" path="res://scenes/character_body_2d.gd" id="1_4jidw"]
 [ext_resource type="PackedScene" uid="uid://d0a67jc8hum05" path="res://scenes/weapon.tscn" id="2_dhahq"]
 [ext_resource type="Texture2D" uid="uid://bxwca4d31lwdb" path="res://assets/character_shoot.png" id="3_8ecqg"]
+[ext_resource type="Material" uid="uid://hiabcw2d4idc" path="res://shaders/damage.tres" id="3_e4vx0"]
 [ext_resource type="Texture2D" uid="uid://dp5kjlea5k74f" path="res://assets/character_run.png" id="4_bnsme"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vb5j5"]
@@ -157,6 +158,7 @@ shape = SubResource("RectangleShape2D_vb5j5")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 z_index = 1
 texture_filter = 1
+material = ExtResource("3_e4vx0")
 position = Vector2(2, 16)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_g8iyg")

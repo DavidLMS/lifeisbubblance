@@ -5,7 +5,9 @@ signal shoot_finished
 signal bubble_time
 signal player_time
 
-var current_state: States = States.BallTime
+signal death
+
+var current_state: States = States.PlayerTime
 
 enum States {
 	Waiting, BallTime, PlayerTime
