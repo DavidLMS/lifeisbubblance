@@ -21,6 +21,7 @@ Events="*res://scripts/events.gd"
 Talo="*res://addons/talo/talo_manager.gd"
 AudioManager="*res://scenes/audio_manager.gd"
 Global="*res://scripts/global.gd"
+UnicodeNormalizer="*res://addons/goutte.unicode/singleton/UnicodeNormalizer.gd"
 
 [display]
 

@@ -34,7 +34,7 @@ func on_death() -> void:
 	get_tree().create_timer(4.1).timeout.connect(the_end)
 
 func the_end():
-	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+	get_tree().change_scene_to_file("res://scenes/gameover.tscn")
 
 func death(value: float):
 	position.y -= 4.0
