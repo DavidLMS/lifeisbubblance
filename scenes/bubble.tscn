@@ -137,7 +137,6 @@ script = ExtResource("1_ynt4x")
 player_time_texture = ExtResource("2_r1k55")
 bubble_time_texture = ExtResource("3_dsdcb")
 next_bubble_count = 2
-damage = 25
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 0.5)

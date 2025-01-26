@@ -25,7 +25,7 @@ func _ready() -> void:
 
 func bubble_hit_wall():
 	if Events.bubbles_green == 0:
-		get_tree().create_timer(Events.bubble_time_wait).timeout.connect(end_bubble_time)
+		get_tree().create_timer(Events.player_time_wait).timeout.connect(end_bubble_time)
 	Events.bubbles_green += 1
 
 func end_bubble_time():
