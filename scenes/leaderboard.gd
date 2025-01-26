@@ -3,6 +3,7 @@ extends Node2D
 var entry_scene = preload("res://scenes/entry_leaderboard.tscn")
 
 @export var leaderboard_internal_name: String
+@onready var back_button: Button = $UI/MarginContainer/VBoxContainer/BackButton
 
 @onready var leaderboard_name: Label = %LeaderboardName
 @onready var entries_container: VBoxContainer = %Entries
@@ -15,6 +16,7 @@ func _ready() -> void:
 	leaderboard_name.text = leaderboard_name.text.replace("{leaderboard}", leaderboard_internal_name)
 	await _load_entries()
 	_set_entry_count()
+	back_button.grab_focus()
 
 func _set_entry_count():
 	if entries_container.get_child_count() == 0:
