@@ -48,7 +48,7 @@ func _physics_process(delta: float) -> void:
 
 	if velocity.x != 0:
 		sprite.flip_h = velocity.x<0 
-		if sprite.animation != "shoot":
+		if sprite.animation != "shoot" and not sprite.is_playing():
 			sprite.play("default")
 	else:
 		if sprite.animation == "default":
