@@ -40,6 +40,7 @@ enabled=PackedStringArray("res://addons/AS2P/plugin.cfg", "res://addons/talo/plu
 weapon=""
 player=""
 bubble=""
+walls=""
 
 [input]
 

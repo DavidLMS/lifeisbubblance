@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://d1k8y7j522o6i"]
+
+[ext_resource type="Shader" path="res://shaders/damage.gdshader" id="1_x1rna"]
+
+[resource]
+resource_local_to_scene = true
+shader = ExtResource("1_x1rna")
+shader_parameter/blink_color = Color(0.506529, 0.996513, 1, 1)
+shader_parameter/blink_intensity = 0.0

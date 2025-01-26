@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://hiabcw2d4idc"]
+
+[ext_resource type="Shader" path="res://shaders/damage.gdshader" id="1_cht8f"]
+
+[resource]
+resource_local_to_scene = true
+shader = ExtResource("1_cht8f")
+shader_parameter/blink_color = Color(0, 0, 0, 1)
+shader_parameter/blink_intensity = 0.0
