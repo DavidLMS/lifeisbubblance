@@ -50,9 +50,9 @@ func _physics_process(delta: float) -> void:
 		#if !(OS.get_name() == "Web"):
 		#	get_tree().quit()
 
-	var direction := Input.get_axis("ui_left", "ui_right")
+	var direction := Input.get_axis("move_left", "move_right")
 
-	if Input.is_action_just_pressed("ui_accept") and not shooting:
+	if Input.is_action_just_pressed("shoot") and not shooting:
 		sprite.play("shoot")
 		shooting = true
 		await get_tree().create_timer(0.3).timeout
