@@ -13,6 +13,7 @@ extends RigidBody2D
 @export var scale_reduction = .5
 @export var scale_min = 1
 @export var damage = 25
+@export var impulse_force = 250
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
@@ -37,16 +38,20 @@ func set_bubble_texture():
 func _process(delta: float) -> void:
 	if waiting:
 		if Input.is_action_just_pressed("move_left"):
+			apply_direction(Vector2.LEFT)
 			end_waiting()
 		if Input.is_action_just_pressed("move_right"):
+			apply_direction(Vector2.RIGHT)
 			end_waiting()
 		if Input.is_action_just_pressed("move_up"):
+			apply_direction(Vector2.UP)
 			end_waiting()
 		if Input.is_action_just_pressed("move_down"):
+			apply_direction(Vector2.DOWN)
 			end_waiting()
 
 func apply_direction(direction: Vector2):
-	apply_impulse(direction, direction)
+	apply_impulse(direction * impulse_force)
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.is_in_group("weapon"):
