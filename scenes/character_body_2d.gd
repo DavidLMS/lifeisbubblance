@@ -3,6 +3,9 @@ extends CharacterBody2D
 @onready var sprite = $AnimatedSprite2D
 @onready var collider = $CollisionShape2D
 
+@onready var player_time_caption = %YouArePlayer
+@onready var bubble_time_caption = %YouAreBubbles
+
 @export var weapon:PackedScene
 @export var weapon_offset:Vector2
 @export var camera: Camera2D
@@ -22,10 +25,16 @@ func _ready() -> void:
 	Events.shoot_finished.connect(shooting_finished)
 	Events.death.connect(on_death)
 	Events.bubble_hit_wall.connect(bubble_hit_wall)
+	Events.player_time.connect(change_caption)
+	Events.bubble_time.connect(change_caption)
+
+func change_caption():
+	player_time_caption.visible = Events.is_player_time()
+	bubble_time_caption.visible = Events.is_bubble_time()
 
 func bubble_hit_wall():
 	if Events.bubbles_green == 0:
-		get_tree().create_timer(Events.bubble_time_wait).timeout.connect(end_bubble_time)
+		get_tree().create_timer(Events.player_time_wait).timeout.connect(end_bubble_time)
 	Events.bubbles_green += 1
 
 func end_bubble_time():

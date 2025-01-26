@@ -11,6 +11,7 @@ var current_state: States = States.BubbleTime
 var bubbles_green = 0
 
 var bubble_time_wait = 10.0
+var player_time_wait = 5.0
 
 var first_bubble_hit = true
 

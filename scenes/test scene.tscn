@@ -15,8 +15,8 @@
 [ext_resource type="Script" path="res://scripts/helpers.gd" id="11_cqdfg"]
 [ext_resource type="Texture2D" uid="uid://dc1ufmpsoiioe" path="res://assets/arrow_keys_helper.png" id="12_blk4h"]
 [ext_resource type="Texture2D" uid="uid://m6okt4uq1ajs" path="res://assets/space_key_helper.png" id="13_x8rdk"]
-[ext_resource type="LabelSettings" uid="uid://0x36rjdrhxwn" path="res://scenes/labelPlayer.tres" id="16_eail7"]
-[ext_resource type="LabelSettings" uid="uid://bgfcfdahc1olk" path="res://scenes/labelBubbles.tres" id="17_slxel"]
+[ext_resource type="LabelSettings" path="res://scenes/labelPlayer.tres" id="16_eail7"]
+[ext_resource type="LabelSettings" path="res://scenes/labelBubbles.tres" id="17_slxel"]
 
 [sub_resource type="Animation" id="Animation_fas7d"]
 length = 2.5
@@ -142,7 +142,7 @@ physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 6
 sources/0 = SubResource("TileSetAtlasSource_fie4b")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_1sno7"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d6twb"]
 resource_local_to_scene = true
 shader = ExtResource("6_4a70n")
 shader_parameter/blink_color = null
@@ -205,7 +205,7 @@ tile_set = SubResource("TileSet_nt62d")
 camera = NodePath("../Camera2D")
 
 [node name="Bubble" parent="." instance=ExtResource("5_2gpxk")]
-material = SubResource("ShaderMaterial_1sno7")
+material = SubResource("ShaderMaterial_d6twb")
 player_time_texture = null
 bubble_time_texture = null
 

@@ -36,8 +36,17 @@ func set_bubble_texture():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if waiting:
-		if Input.is_action_just_pressed("ui_left"):
+		if Input.is_action_just_pressed("move_left"):
 			end_waiting()
+		if Input.is_action_just_pressed("move_right"):
+			end_waiting()
+		if Input.is_action_just_pressed("move_up"):
+			end_waiting()
+		if Input.is_action_just_pressed("move_down"):
+			end_waiting()
+
+func apply_direction(direction: Vector2):
+	apply_impulse(direction, direction)
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.is_in_group("weapon"):
