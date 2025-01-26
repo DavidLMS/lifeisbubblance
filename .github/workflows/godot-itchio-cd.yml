@@ -1,10 +1,10 @@
 name: Godot Builder Itchio
 
 on:
-#  workflow_dispatch:
-   push:
-     branches:
-       - main
+  workflow_dispatch:
+#   push:
+#     branches:
+#       - main
 
 jobs:         
  buildWebGL:
@@ -59,7 +59,7 @@ jobs:
          
      - uses: yeslayla/butler-publish-itchio-action@master
        env:
-         BUTLER_CREDENTIALS: ${{ secrets.ITCH_IO_API_KEY }}
+         #BUTLER_CREDENTIALS: ${{ secrets.ITCH_IO_API_KEY }}
          CHANNEL: HTML
          ITCH_GAME: life-is-bubblance
          ITCH_USER: davidlms
