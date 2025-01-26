@@ -5,6 +5,9 @@ extends CharacterBody2D
 
 @onready var player_time_caption = %YouArePlayer
 @onready var bubble_time_caption = %YouAreBubbles
+@onready var player_time_tilemap = $"../TileMapPlayer"
+@onready var bubble_time_tilemap = $"../TileMapBubble"
+
 
 @export var weapon:PackedScene
 @export var weapon_offset:Vector2
@@ -31,6 +34,8 @@ func _ready() -> void:
 func change_caption():
 	player_time_caption.visible = Events.is_player_time()
 	bubble_time_caption.visible = Events.is_bubble_time()
+	player_time_tilemap.visible = Events.is_player_time()
+	bubble_time_tilemap.visible = Events.is_bubble_time()
 
 func bubble_hit_wall():
 	if Events.bubbles_green == 0:
