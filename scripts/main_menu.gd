@@ -11,8 +11,11 @@ func _ready() -> void:
 		get_node("/root/AudioManager").play_scene_music(0)
 
 func _on_play_button_pressed() -> void:
+	Global.score = 0
+	Global.current_health = Global.max_health
 	AudioManager.change_track(1)
-	get_tree().change_scene_to_file("res://scenes/test scene.tscn")
+	get_tree().call_deferred("change_scene_to_file", "res://scenes/test scene.tscn")
+	get_tree().reload_current_scene()
 
 
 func _on_records_button_pressed() -> void:

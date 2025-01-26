@@ -47,7 +47,6 @@ func _physics_process(delta: float) -> void:
 
 	if Input.is_action_just_pressed("escape"):
 		get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
-		Global.score = 0
 		#if !(OS.get_name() == "Web"):
 		#	get_tree().quit()
 
