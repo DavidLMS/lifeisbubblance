@@ -4,7 +4,7 @@ extends Control
 
 func _ready() -> void:
 	if OS.get_name() == "Web":
-		$MarginContainer/VBoxContainer/QuitButton.hide()
+		$MarginContainer/VBoxContainer/QuitButton.queue_free()
 	play_button.grab_focus()
 	await get_tree().process_frame
 	if has_node("/root/AudioManager"):
