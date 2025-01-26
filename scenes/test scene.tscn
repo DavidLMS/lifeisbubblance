@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://c21hyka0aju0f"]
+[gd_scene load_steps=30 format=4 uid="uid://c21hyka0aju0f"]
 
 [ext_resource type="Texture2D" uid="uid://c367mcobecici" path="res://assets/bricks.png" id="1_03on1"]
 [ext_resource type="Texture2D" uid="uid://byjooygmpccwh" path="res://assets/gun.png" id="1_uvuk3"]
@@ -15,6 +15,8 @@
 [ext_resource type="Script" path="res://scripts/helpers.gd" id="11_cqdfg"]
 [ext_resource type="Texture2D" uid="uid://dc1ufmpsoiioe" path="res://assets/arrow_keys_helper.png" id="12_blk4h"]
 [ext_resource type="Texture2D" uid="uid://m6okt4uq1ajs" path="res://assets/space_key_helper.png" id="13_x8rdk"]
+[ext_resource type="LabelSettings" uid="uid://0x36rjdrhxwn" path="res://scenes/labelPlayer.tres" id="16_eail7"]
+[ext_resource type="LabelSettings" uid="uid://bgfcfdahc1olk" path="res://scenes/labelBubbles.tres" id="17_slxel"]
 
 [sub_resource type="Animation" id="Animation_fas7d"]
 length = 2.5
@@ -140,7 +142,7 @@ physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 6
 sources/0 = SubResource("TileSetAtlasSource_fie4b")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_4n1we"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1sno7"]
 resource_local_to_scene = true
 shader = ExtResource("6_4a70n")
 shader_parameter/blink_color = null
@@ -203,7 +205,9 @@ tile_set = SubResource("TileSet_nt62d")
 camera = NodePath("../Camera2D")
 
 [node name="Bubble" parent="." instance=ExtResource("5_2gpxk")]
-material = SubResource("ShaderMaterial_4n1we")
+material = SubResource("ShaderMaterial_1sno7")
+player_time_texture = null
+bubble_time_texture = null
 
 [node name="TextureRect" type="TextureRect" parent="."]
 modulate = Color(0.699653, 0.699653, 0.699653, 1)
@@ -219,7 +223,7 @@ texture = ExtResource("6_n3y7c")
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
 anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 56.0
+offset_bottom = 156.0
 grow_horizontal = 2
 theme_override_constants/margin_top = 100
 
@@ -268,6 +272,48 @@ one_shot = true
 autostart = true
 
 [node name="NewBubbleSound" type="AudioStreamPlayer" parent="."]
+
+[node name="YouArePlayer" type="Label" parent="."]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -524.0
+offset_top = -278.0
+offset_right = -174.0
+offset_bottom = -222.0
+grow_horizontal = 2
+scale = Vector2(3, 3)
+theme_override_colors/font_color = Color(0.54902, 0.745098, 0.87451, 1)
+theme_override_fonts/font = ExtResource("10_1m384")
+theme_override_font_sizes/font_size = 50
+text = "You are the player"
+label_settings = ExtResource("16_eail7")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="YouAreBubbles" type="Label" parent="."]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -524.0
+offset_top = -278.0
+offset_right = -174.0
+offset_bottom = -222.0
+grow_horizontal = 2
+scale = Vector2(3, 3)
+theme_override_colors/font_color = Color(0.54902, 0.745098, 0.87451, 1)
+theme_override_fonts/font = ExtResource("10_1m384")
+theme_override_font_sizes/font_size = 50
+text = "Bubbles is you"
+label_settings = ExtResource("17_slxel")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
 
 [connection signal="timeout" from="Timer" to="Timer" method="_on_timeout"]
 [connection signal="timeout" from="Helpers/HelperTimer" to="Helpers" method="_on_helper_timer_timeout"]
